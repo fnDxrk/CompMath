@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -Wall
 
 DIR = Gauss
 SRC_DIR = $(DIR)/src
@@ -12,11 +12,14 @@ OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
 TARGET = $(BIN_DIR)/my_program
 
+all:
+	@./$(TARGET)
+
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+	@$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -I$(INCLUDE_DIR) -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -I$(INCLUDE_DIR) -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	@rm -f $(OBJS) $(TARGET)
