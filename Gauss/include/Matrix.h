@@ -9,8 +9,8 @@ class Matrix {
 private:
     int rows;
     int cols;
-    std::vector<std::vector<int>> data;
-    
+    vector<vector<int>> data;
+
 public:
     Matrix(int rows, int cols);
     
