@@ -12,7 +12,7 @@ OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
 TARGET = $(BIN_DIR)/my_program
 
-all:
+all: $(TARGET)
 	@./$(TARGET)
 
 $(TARGET): $(OBJS)
